@@ -1,0 +1,30 @@
+# Angular
+.angular/
+node_modules/
+dist/
+out-tsc/
+tmp/
+
+# Build
+build/
+target/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDEs
+.vscode/
+.idea/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+
+# Coverage
+coverage/

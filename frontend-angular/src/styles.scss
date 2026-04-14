@@ -1,0 +1,55 @@
+body {
+  background: #0f172a;
+  font-family: 'Segoe UI', sans-serif;
+  color: #e2e8f0;
+}
+
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #1e293b;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin: 0;
+}
+
+.tag-yes {
+  background: #22c55e;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+
+.tag-no {
+  background: #ef4444;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 6px;
+}.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.radio-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

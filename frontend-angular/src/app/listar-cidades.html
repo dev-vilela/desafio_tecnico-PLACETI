@@ -1,0 +1,57 @@
+<div class="container">
+
+    <p-toast></p-toast>
+
+    <div class="header">
+        <h2>🏙️ Gestão de Cidades</h2>
+        <p-button label="Nova Cidade" icon="pi pi-plus" (click)="abreJanelaParaCadastrarNovaCidade()" class="p-button-success"></p-button>
+    </div>
+
+    <p-table
+        [value]="listaCidades"
+        [paginator]="true"
+        [rows]="5"
+        [rowsPerPageOptions]="[5, 10, 20]"
+        styleClass="p-datatable-striped p-datatable-hoverable">
+
+<ng-template pTemplate="header">
+  <tr>
+    <th>ID</th>
+    <th>Nome</th>
+    <th>UF</th>
+    <th>Capital</th>
+    <th style="width: 180px;">Ações</th>
+  </tr>
+</ng-template>
+<ng-template pTemplate="body" let-cidade>
+  <tr>
+    <td>{{ cidade.id }}</td> <!-- 👈 ADICIONA ISSO -->
+    <td>{{ cidade.nome }}</td>
+    <td>{{ cidade.uf }}</td>
+    <td>{{ cidade.capital ? 'Sim' : 'Não' }}</td>
+    <td>
+      <p-button icon="pi pi-shop"
+        severity="success"
+        (click)="irParaComercios(cidade)">
+      </p-button>
+
+      <p-button icon="pi pi-pencil" severity="info"
+        (click)="abreJanelaParaAlterarCidade(cidade)">
+      </p-button>
+
+      <p-button icon="pi pi-trash" severity="danger"
+        (click)="excluir(cidade)">
+      </p-button>
+    </td>
+  </tr>
+</ng-template>
+
+    </p-table>
+
+    <cadastrar-cidade
+        *ngIf="mostraJanelaCadastro"
+        [cidade]="cidadeSelecionada"
+        (onClose)="fechaJanelaCadastro($event)">
+    </cadastrar-cidade>
+
+</div>

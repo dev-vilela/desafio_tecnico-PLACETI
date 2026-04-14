@@ -1,0 +1,40 @@
+<p-dialog 
+  header="Cadastrar Cidade"
+[visible]="true"
+
+
+  [modal]="true"
+  [style]="{ width: '28rem' }">
+
+  <div class="form">
+
+    <div class="field">
+      <label>Nome</label>
+      <input pInputText [(ngModel)]="cidade.nome" />
+    </div>
+
+    <div class="field">
+      <label>UF</label>
+      <input pInputText [(ngModel)]="cidade.uf" />
+    </div>
+
+    <div class="field">
+      <label>Capital</label>
+
+      <div class="radio-group">
+        <p-radioButton name="capital" [value]="true" [(ngModel)]="cidade.capital"></p-radioButton>
+        <label>Sim</label>
+
+        <p-radioButton name="capital" [value]="false" [(ngModel)]="cidade.capital"></p-radioButton>
+        <label>Não</label>
+      </div>
+    </div>
+
+  </div>
+
+  <ng-template pTemplate="footer">
+    <p-button label="Cancelar" severity="secondary" (click)="cancelar()" />
+    <p-button label="Salvar" icon="pi pi-check" (click)="salvar()" />
+  </ng-template>
+
+</p-dialog>
